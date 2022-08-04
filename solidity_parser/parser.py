@@ -181,7 +181,8 @@ class AstVisitor(SolidityVisitor):
         elif fd.identifier():
             name = fd.identifier().getText()
         else:
-            name = ctx.getText()
+            name = '' # handle old style fallback function: function(){ ... }
+            isFallback = True
 
         parameters = self.visit(ctx.parameterList())
         returnParameters = self.visit(ctx.returnParameters()) if ctx.returnParameters() else []
