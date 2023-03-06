@@ -18,8 +18,8 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-version = "0.1.1"
-name = "solidity-parser"
+version = "0.1.2"
+name = "python-solidity-parser"
 
 setup(
     name=name,
